@@ -23,7 +23,11 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
   return (
     <Pressable
-      style={[containerClassName, isPressed && { opacity: 0.5 }]}
+      style={[
+        styles.defaultContainer,
+        containerClassName,
+        isPressed && { opacity: 0.5 },
+      ]}
       onPress={onPress}
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
