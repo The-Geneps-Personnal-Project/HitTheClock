@@ -4,11 +4,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import ButtonComponent from "../../components/Buttons/button";
 import styles from "./HomePage.styles";
-import SpotifyIconSVG from "@/assets/svg/spotify-icon";
+import { SpotifyIconSVG, SettingsIconSVG } from "@/assets/svg";
 
 const HomePage: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <ButtonComponent onPress={() => alert("Settings")}>
+        <SettingsIconSVG width={48} height={48} />
+      </ButtonComponent>
       <Text style={styles.title}>HitTheClock</Text>
       <ButtonComponent
         title="Connect to Spotify"
