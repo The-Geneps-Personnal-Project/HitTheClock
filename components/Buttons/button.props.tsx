@@ -1,7 +1,7 @@
 import { StyleProp, TextStyle, ViewStyle } from "react-native";
 
 export type ButtonProps = {
-  title: string;
+  title?: string;
   onPress: () => void;
   image?: string;
   containerClassName?: StyleProp<ViewStyle>;
