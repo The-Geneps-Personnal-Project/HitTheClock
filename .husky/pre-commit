@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Get list of staged JS/TS files
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|jsx|ts|tsx)$' || true)
+
+# If no matching files, skip the check
+[ -z "$FILES" ] && exit 0
+
+# Check for console.log in staged files
+if grep -nH 'console\.log' $FILES; then
+  echo "❌ Commit blocked: console.log found. Please remove it before committing."
+  exit 1
+fi
+
+exit 0
